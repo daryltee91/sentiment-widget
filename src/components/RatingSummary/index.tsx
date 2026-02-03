@@ -8,13 +8,13 @@ export const RatingSummary = () => {
   const { sentiments, average } = useContext(SentimentsContext);
 
   return (
-    <div id="summary">
+    <div id="summary" data-testid="rating-summary">
       <h2>Summary</h2>
       <p>
-        Total submissions: <strong>{sentiments.length}</strong>
+        Total submissions: <strong data-testid="total-submissions">{sentiments.length}</strong>
       </p>
       <p>
-        Average rating: <strong>{average.toFixed(2)}</strong>
+        Average rating: <strong data-testid="average-rating">{average.toFixed(2)}</strong>
       </p>
       <hr />
       <ul>
@@ -28,7 +28,7 @@ export const RatingSummary = () => {
 
 const SentimentListItem = ({ sentiment }: { sentiment: SentimentProps }) => {
   return (
-    <li className="sentiment-list-item">
+    <li className="sentiment-list-item" data-testid="sentiment-list-item">
       <div>
         <span>Rating: {sentiment.rating}</span>
         <small>{dayjs(sentiment.createdAt).format("DD MMM YYYY h:mm a")}</small>

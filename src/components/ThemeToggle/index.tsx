@@ -15,8 +15,8 @@ export const ThemeToggle = () => {
 
   return (
     <div className="theme-toggle-container">
-      <button className="theme-toggle" onClick={handleChangeTheme}>
-        {theme === "dark" ? <Sun /> : <Moon />}
+      <button className="theme-toggle" onClick={handleChangeTheme} data-testid="theme-toggle">
+        {theme === "dark" ? <Sun data-testid="theme-light" /> : <Moon data-testid="theme-dark" />}
       </button>
     </div>
   );

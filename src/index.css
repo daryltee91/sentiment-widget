@@ -1,8 +1,9 @@
 :root {
   --bg-color: #242424;
   --font-color: rgba(255, 255, 255, 0.87);
-  --btn-bg-color: rgba(26, 26, 26);
+  --btn-bg-color: rgb(26, 26, 26);
   --btn-hover-bg-color: rgba(26, 26, 26, 0.9);
+  --btn-selected-bg-color: rgb(15, 15, 15);
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -22,7 +23,7 @@
 [data-theme="light"] {
   --bg-color: #ffffff;
   --font-color: rgba(0, 0, 0, 0.87);
-  --btn-bg-color: rgba(137, 137, 137);
+  --btn-bg-color: rgb(137, 137, 137);
   --btn-hover-bg-color: rgba(137, 137, 137, 0.9);
   --btn-selected-bg-color: rgba(160, 171, 76, 0.9);
 }

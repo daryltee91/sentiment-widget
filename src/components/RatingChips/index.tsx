@@ -16,7 +16,7 @@ export const RatingChips = ({
       <h3>Rating </h3>
       <span className="error-text">{error}</span>
 
-      <div id="rating-chips">
+      <div id="rating-chips" data-testid="rating-chips">
         {allRatings.map((value) => {
           return (
             <RatingChip
@@ -42,7 +42,11 @@ const RatingChip = ({
   isActive: boolean;
 }) => {
   return (
-    <button className={isActive ? "selected" : ""} onClick={() => onClickCallback(value)}>
+    <button
+      className={isActive ? "selected" : ""}
+      onClick={() => onClickCallback(value)}
+      data-testid={`rating-chips-${value}`}
+    >
       {value}
     </button>
   );

@@ -15,10 +15,24 @@ git clone {project_repository}
 cd {project_folder}
 ```
 
-2. Run the project in development mode
+2. Install dependencies
+
+```bash
+pnpm i
+```
+
+## Running The Project
+
+1. To run the project in development mode
 
 ```bash
 pnpm run dev
+```
+
+2. To run tests
+
+```bash
+pnpm run test
 ```
 
 ## Assumptions

@@ -14,7 +14,7 @@ export const CommentBox = ({
       <h3>Comments </h3>
       <span className="error-text">{error}</span>
 
-      <div id="comment-box">
+      <div id="comment-box" data-testid="comment-box">
         <textarea
           rows={3}
           value={comment}
