@@ -1,0 +1,10 @@
+#rating-chips-container {
+  margin-bottom: 0.4em;
+  text-align: left;
+}
+
+#rating-chips {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,0 +1,17 @@
+#summary {
+  text-align: left;
+}
+
+#summary ul {
+  padding-left: 1em;
+}
+
+#summary ul li {
+  padding-bottom: 10px;
+}
+
+.sentiment-list-item div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
