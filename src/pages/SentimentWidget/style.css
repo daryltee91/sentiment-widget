@@ -1,0 +1,7 @@
+.sentiment-widget-container {
+    height: 100%;
+}
+
+.sentiment-widget-container > div {
+    margin: 1rem 0;
+}
