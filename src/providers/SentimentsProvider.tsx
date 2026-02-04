@@ -9,6 +9,7 @@ export const SentimentsProvider = ({ children }: { children: ReactNode }) => {
     return sentiments.reduce((sum, s) => sum + s.rating, 0) / sentiments.length;
   }, [sentiments]);
 
+  // Add a new sentiment submission to the top of the sentiments array
   const addSentiment = (rating: number, comment: string) => {
     const newSentiment: SentimentProps = {
       rating,

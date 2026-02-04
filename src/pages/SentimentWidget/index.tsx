@@ -18,6 +18,7 @@ export const SentimentWidget = () => {
     isSubmitted: false,
   });
 
+  // Saves the selected rating to the formState
   const setRating = (newRating: number) => {
     setFormState((prevState: SentimentFormProps) => {
       const newState = { ...prevState, rating: newRating };
@@ -27,6 +28,7 @@ export const SentimentWidget = () => {
     });
   };
 
+  // Saves the entered comments to the formState
   const setComment = (newComment: string) => {
     setFormState((prevState: SentimentFormProps) => {
       const newState = { ...prevState, comment: newComment };
@@ -59,7 +61,7 @@ export const SentimentWidget = () => {
       return;
     }
 
-    // Disable form submission.
+    // Disable form submission to simulate spam prevention.
     setFormState((prevState) => {
       return {
         ...prevState,
