@@ -10,31 +10,52 @@ A simple sentiment feedback widget, built with React, TypeScript, and Vite.
 
 1. Clone from repository
 
-```bash
-git clone {project_repository}
-cd {project_folder}
-```
+    ```bash
+    git clone {project_repository}
+    cd {project_folder}
+    ```
 
 2. Install dependencies
 
-```bash
-pnpm i
-```
+    ```bash
+    pnpm i
+    ```
 
-## Running The Project
+## Running the App
 
 1. To run the project in development mode
 
-```bash
-pnpm run dev
-```
+    ```bash
+    pnpm run dev
+    ```
 
 2. To run tests
 
-```bash
-pnpm run test
+    ```bash
+    pnpm run test
+    ```
+
+## Folder Structure
+
+```
+frontend/
+├── public/                # Static assets will be stored here
+├── src/
+│   ├── components/        # Reusable UI components are implemented here.
+│   ├── pages/             # Individual page is implemented here.
+│   ├── providers/         # Context providers
+│   ├── tests/             # Test setup files and e2e tests are defined here.
+│   ├── App.tsx            # Main app component
+│   ├── main.tsx           # Entry point
+│   └── types.ts           # Shared TypeScript types
+├── index.html             # Main HTML file
+├── package.json           # Project metadata and scripts
+├── tsconfig*.json         # TypeScript configuration
+├── vite.config.ts         # Vite configuration
+└── README.md              # Project documentation
 ```
 
 ## Assumptions
 
 - The average rating value will be displayed with up to 2 decimal places.
+- Rating submissions are stored in an array, where most recent submissions are added to the top of the array. Thus, when displaying the three most recent submissions, we take the top 3 items in the array.
