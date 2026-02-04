@@ -35,6 +35,12 @@ A simple sentiment feedback widget, built with React, TypeScript, and Vite.
     pnpm run test
     ```
 
+3. To compile the app for production
+
+    ```bash
+    pnpm run build
+    ```
+
 ## Folder Structure
 
 ```
@@ -58,6 +64,7 @@ frontend/
 
 ## Assumptions
 
+- Error messages and success messages are fixed, and thus hardcoded.
 - The average rating value will be displayed with up to 2 decimal places.
 - Rating submissions are stored in an array, where most recent submissions are added to the top of the array. Thus, when displaying the three most recent submissions, we take the top 3 items in the array.
 - The app's design should work with a minimum viewport width of 320px.
