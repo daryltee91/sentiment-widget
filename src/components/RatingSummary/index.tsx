@@ -30,10 +30,10 @@ const SentimentListItem = ({ sentiment }: { sentiment: SentimentProps }) => {
   return (
     <li className="sentiment-list-item" data-testid="sentiment-list-item">
       <div>
-        <span>Rating: {sentiment.rating}</span>
+        <span data-testid="sentiment-list-item-rating">Rating: {sentiment.rating}</span>
         <small>{dayjs(sentiment.createdAt).format("DD MMM YYYY h:mm a")}</small>
       </div>
-      <em>"{sentiment.comment}"</em>
+      <em data-testid="sentiment-list-item-comment">"{sentiment.comment}"</em>
     </li>
   );
 };

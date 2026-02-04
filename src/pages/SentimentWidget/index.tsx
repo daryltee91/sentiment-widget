@@ -106,7 +106,7 @@ export const SentimentWidget = () => {
         setComment={setComment}
       />
       <SubmitButton onClickCallback={handleSubmit} isDisabled={formState.isDisabled} />
-      <span className="success-text">
+      <span className="success-text" data-testid="success-text">
         {formState.isSubmitted ? "Thank you for your feedback." : ""}
       </span>
       <RatingSummary />

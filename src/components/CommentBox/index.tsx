@@ -20,6 +20,7 @@ export const CommentBox = ({
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           placeholder="Enter your comments"
+          data-testid="comment-box-textarea"
         />
       </div>
     </div>

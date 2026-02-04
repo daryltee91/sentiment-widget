@@ -8,7 +8,7 @@ export const SubmitButton = ({
   isDisabled: boolean;
 }) => {
   return (
-    <button className="submit-btn" onClick={onClickCallback} disabled={isDisabled}>
+    <button className="submit-btn" onClick={onClickCallback} disabled={isDisabled} data-testid="submit-btn">
       Submit
     </button>
   );
