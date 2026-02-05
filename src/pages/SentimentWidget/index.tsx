@@ -38,8 +38,8 @@ export const SentimentWidget = () => {
     });
   };
 
-  const handleSubmit = () => {
-    const errors: { rating?: string; comment?: string } = {};
+  const handleSubmit = async () => {
+    const errors: { rating?: string; comment?: string; submit?: string } = {};
 
     if (!formState.rating) {
       errors.rating = "Please select a rating.";
@@ -66,11 +66,25 @@ export const SentimentWidget = () => {
       return {
         ...prevState,
         isDisabled: true,
-        isSubmitted: true,
       };
     });
 
-    addSentiment(formState.rating, formState.comment);
+    const added = await addSentiment(formState.rating, formState.comment);
+
+    if (!added) {
+      setFormState((prevState) => {
+        return {
+          ...prevState,
+          errors: {
+            submit: "An error occurred, please try again",
+          },
+          isDisabled: false,
+          isSubmitted: false,
+        };
+      });
+
+      return;
+    }
 
     // Clear the form.
     setFormState((prevState) => {
@@ -78,6 +92,7 @@ export const SentimentWidget = () => {
         ...prevState,
         rating: 0,
         comment: "",
+        isSubmitted: true,
       };
     });
 
@@ -110,6 +125,9 @@ export const SentimentWidget = () => {
       <SubmitButton onClickCallback={handleSubmit} isDisabled={formState.isDisabled} />
       <span className="success-text" data-testid="success-text">
         {formState.isSubmitted ? "Thank you for your feedback." : ""}
+      </span>
+      <span className="error-text" data-testid="success-text">
+        {formState.errors.submit}
       </span>
       <RatingSummary />
     </div>
