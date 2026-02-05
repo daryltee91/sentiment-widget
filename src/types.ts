@@ -10,6 +10,7 @@ export type SentimentFormProps = {
   errors: {
     rating?: string;
     comment?: string;
+    submit?: string;
   };
   isDisabled: boolean;
   isSubmitted: boolean;

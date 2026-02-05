@@ -10,13 +10,29 @@ export const SentimentsProvider = ({ children }: { children: ReactNode }) => {
   }, [sentiments]);
 
   // Add a new sentiment submission to the top of the sentiments array
-  const addSentiment = (rating: number, comment: string) => {
+  const addSentiment = async (rating: number, comment: string) => {
+    // Post the new sentiment to the backend
+    const req = await fetch(`https://httpbin.org/post`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application-json",
+      },
+      body: JSON.stringify({ rating, comment }),
+    });
+
+    // If error occurs, do not add sentiment
+    if (!req.ok || req.status !== 200) {
+      return false;
+    }
+
     const newSentiment: SentimentProps = {
       rating,
       comment,
       createdAt: new Date(),
     };
     setSentiments((prevValue) => [newSentiment, ...prevValue]);
+
+    return true;
   };
 
   return (
